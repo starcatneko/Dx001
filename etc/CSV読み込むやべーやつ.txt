@@ -1,0 +1,35 @@
+using namespace std;
+
+
+{
+	//ファイルの読み込み
+	ifstream ifs("csv/file.csv");		//読み込むCSV
+	if (!ifs) {
+		DrawString(120, 0, "error!! csv not yomikomi!!", 0xFFFF00);
+	}
+
+
+	string str;
+
+	int y = 0;
+	while (getline(ifs, str))		//csvファイルを1行ずつ読み込む
+	{
+
+		string token;
+		istringstream stream(str);
+
+		int x = 0;
+		while (getline(stream, token, ','))			//1行のうち、文字列とコンマを分割する
+		{
+			
+			int temp = stof(token); //stof(string str) : stringをfloatに変換
+									//すべて文字列として読み込まれるため
+									//数値は変換が必要
+
+			配列[y][x] = temp;		//配列[配列の番号][配列の要素] = temp;
+			x++;		
+		}
+		y++;
+	}
+	editflg = true;
+}

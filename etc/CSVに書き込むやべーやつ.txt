@@ -1,0 +1,17 @@
+using namespace std;
+
+
+{
+ofstream ofs("csv/out.csv");		//出力先のCSVのパス
+
+	for (int y = 0; y < 配列の要素数; y++)
+	{
+		for (int x = 0; x < 配列の要素数; x++)
+		{
+
+			ofs << 配列[y][x] << "," ;
+			DrawString(0, 504, "kakikomi shiteiru!!!",0xFFFFFF,0);
+		}
+		ofs << "\n";
+	}
+}
